@@ -1,0 +1,16 @@
+{
+  "name": "SRINI lab",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1.2.2-22-bookworm",
+  "remoteUser": "node",
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["anthropic.claude-code"]
+    }
+  },
+  "runArgs": [
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges"
+  ],
+  "mounts": []
+}

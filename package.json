@@ -1,0 +1,11 @@
+{
+  "name": "a1-vooras-koodibaas",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test lab/feature-check.mjs lab/regression-check.mjs lab/measure-check.mjs",
+    "quiz": "node lab/print-quiz.mjs",
+    "check-answers": "node lab/check-answers.mjs",
+    "selfcheck": "bash lab/measure.sh"
+  }
+}
