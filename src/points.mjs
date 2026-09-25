@@ -12,9 +12,15 @@ function basePoints(cents) {
   return Math.floor(cents / 100);
 }
 
-export function calculatePoints({ cents, category, totalPointsBeforePurchase }) {
+export function calculatePoints({
+  cents,
+  category,
+  totalPointsBeforePurchase,
+  isDoubleWeekend = false,
+}) {
   if (isExcludedCategory(category)) return 0;
   const tier = tierForTotal(totalPointsBeforePurchase);
-  const withMultiplier = Math.floor(basePoints(cents) * TIER_MULTIPLIER[tier]);
+  let withMultiplier = Math.floor(basePoints(cents) * TIER_MULTIPLIER[tier]);
+  if (isDoubleWeekend) withMultiplier *= 2;
   return withMultiplier + flatBonus(cents);
 }
